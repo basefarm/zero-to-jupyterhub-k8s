@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ARG JUPYTERHUB_VERSION=0.9.*
+ARG JUPYTERHUB_VERSION=0.8.1
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
