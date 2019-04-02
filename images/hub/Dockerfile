@@ -42,6 +42,10 @@ RUN PYCURL_SSL_LIBRARY=openssl pip3 install --no-cache-dir \
             echo jupyterhub==${JUPYTERHUB_VERSION}; \
           fi')
 
+RUN git clone https://github.com/basefarm/oauthenticator && \
+    pip install -e oauthenticator && \
+    pip install jwt
+
 ADD jupyterhub_config.py /srv/jupyterhub_config.py
 
 ADD z2jh.py /usr/local/lib/python3.6/dist-packages/z2jh.py
